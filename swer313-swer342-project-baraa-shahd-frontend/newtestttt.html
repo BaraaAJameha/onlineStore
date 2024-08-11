@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>jQuery Open Bootstrap Modal on Image Click</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){
+	$('#Myimg').click(function(){
+  		$('#Mymodal').modal('show')
+	});
+});
+</script>
+<style>
+body{
+	padding: 20px;
+}
+#MyForm{
+    width:300px;
+    border: 1px solid #ccc;
+    padding: 14px;
+    background: #ececec;
+}	
+#Myimg{
+	margin:0 auto;
+  	background: #ccc;
+    border: 1px solid #000;
+    padding: 9px;
+}
+
+</style>
+</head>
+<body>
+<h2>Describtion</h2>	
+<img src="https://www.performance-car-guide.co.uk/wp-content/uploads/2018/12/BRABUS-Classic-offers-restored-Mercedes-Benz-vintage-cars-27.jpg" alt="Open Bootstrap Modal on Image Click Using jQuery" width="200px" id="Myimg">
+<!-- .modal -->
+<div class="modal fade" id="Mymodal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">×</button> 
+				<h4 style="color: #BA1616;" class="modal-title" >
+                	Description
+                </h4>  
+
+                <img src="https://www.performance-car-guide.co.uk/wp-content/uploads/2018/12/BRABUS-Classic-offers-restored-Mercedes-Benz-vintage-cars-27.jpg" alt="Open Bootstrap Modal on Image Click Using jQuery" width="200px" id="Myimg">
+                <br>
+                <br>
+                <p >The Mercedes-Benz 300 SL was the autmost classic car to restore which produced by Mercedes-Benz. It has mechanical direct fuel-injection, boosting power almost 50%. Hence, it is capable of reaching a top speed of up to 263 km/h as well as the fastest production car of its time.</p>                                                           
+			</div> 
+			
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>                        
+			</div>
+		</div>                                                                       
+	</div>                                      
+</div>

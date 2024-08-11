@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Cars - Best Online Store</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'roboto', sans-serif;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            z-index: 9;
+        }
+
+        .nav {
+            padding: 10px 10vw;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .brand-logo {
+            height: 70px;
+            width: 250px;
+        }
+
+        .nav-items {
+            display: flex;
+            align-items: center;
+        }
+
+        .search {
+            width: 500px;
+            display: flex;
+        }
+
+        .search-box {
+            width: 80%;
+            height: 40px;
+            padding: 10px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border: 1px solid #d1d1d1;
+            text-transform: capitalize;
+            background: none;
+            color: #a9a9a9;
+            outline: none;
+        }
+
+        .search-btn {
+            width: 20%;
+            height: 40px;
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background: #383838;
+            color: #fff;
+            text-transform: capitalize;
+            font-size: 15px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .search-box::placeholder {
+            color: #a9a9a9;
+        }
+
+        .nav-items a {
+            margin-left: 20px;
+        }
+
+        .nav-items a img {
+            width: 30px;
+        }
+
+        .links-container {
+            width: 100%;
+            display: flex;
+            padding: 10px 10vw;
+            justify-content: center;
+            list-style: none;
+            border-top: 1px solid #d1d1d1;
+        }
+
+        .link {
+            text-transform: capitalize;
+            padding: 0 10px;
+            margin: 0 5px;
+            text-decoration: none;
+            color: #383838;
+            opacity: 0.5;
+            transition: .5s;
+        }
+
+        .link:hover {
+            opacity: 1;
+        }
+
+
+        .heroo-section {
+            width: 100%;
+            height: calc(100vh - 120px);
+
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+        footer {
+            position: relative;
+            width: 100%;
+            padding: 40px 10vw;
+            padding-bottom: 80px;
+            background: #f5f5f5;
+        }
+
+        .footer-content {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .footer-content .logo {
+            height: 160px;
+        }
+
+        .footer-ul-container {
+            width: 45%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .category {
+            width: 200px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+            list-style: none;
+        }
+
+        .category-title {
+            grid-column: span 2;
+            text-transform: capitalize;
+            color: gray;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .category .footer-link {
+            text-decoration: none;
+            text-transform: capitalize;
+            color: gray;
+        }
+
+        .footer-link:hover {
+            color: black;
+        }
+
+        .footer-title,
+        .info {
+            color: gray;
+            margin: 20px 0;
+            text-transform: capitalize;
+        }
+
+        .footer-title {
+            margin-top: 80px;
+            color: gray;
+        }
+
+        .footer-social-container {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+
+        .footer-credit {
+            width: 100%;
+            padding: 10px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            text-align: center;
+            color: gray;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+
+        h2 {
+            color: #000;
+            font-size: 26px;
+            font-weight: 300;
+            text-align: center;
+            text-transform: uppercase;
+            position: relative;
+            margin: 30px 0 60px;
+        }
+
+        h2::after {
+            content: "";
+            width: 100px;
+            position: absolute;
+            margin: 0 auto;
+            height: 4px;
+            border-radius: 1px;
+            background: #BA1616;
+            left: 0;
+            right: 0;
+            bottom: -20px;
+        }
+
+        .carousel {
+            margin: 50px auto;
+            padding: 0 70px;
+        }
+
+        .carousel .item {
+            color: #747d89;
+            min-height: 325px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .carousel .thumb-wrapper {
+            padding: 25px 15px;
+            background: #fff;
+            border-radius: 6px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel .item .img-box {
+            height: 120px;
+            margin-bottom: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .carousel .item img {
+            max-width: 100%;
+            max-height: 100%;
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+        }
+
+        .carousel .item h4 {
+            font-size: 18px;
+        }
+
+        .carousel .item h4,
+        .carousel .item p,
+        .carousel .item ul {
+            margin-bottom: 5px;
+        }
+
+        .carousel .thumb-content .btn {
+            color: #BA1616;
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: bold;
+            background: none;
+            border: 1px solid #BA1616;
+            padding: 6px 14px;
+            margin-top: 5px;
+            line-height: 16px;
+            border-radius: 20px;
+        }
+
+        .carousel .thumb-content .btn:hover,
+        .carousel .thumb-content .btn:focus {
+            color: #fff;
+            background: #BA1616;
+            box-shadow: none;
+        }
+
+        .carousel .thumb-content .btn i {
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        .carousel .item-price {
+            font-size: 13px;
+            padding: 2px 0;
+        }
+
+        .carousel .item-price strike {
+            opacity: 0.7;
+            margin-right: 5px;
+        }
+
+
+
+
+        .carousel-indicators {
+            bottom: -50px;
+        }
+
+        .carousel-indicators li,
+        .carousel-indicators li.active {
+            width: 10px;
+            height: 10px;
+            margin: 4px;
+            border-radius: 50%;
+            border: none;
+        }
+
+        .carousel-indicators li {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-indicators li.active {
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .carousel .wish-icon {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            z-index: 99;
+            cursor: pointer;
+            font-size: 16px;
+            color: #abb0b8;
+        }
+
+        .carousel .wish-icon .fa-heart {
+            color: #ff6161;
+        }
+
+        .star-rating li {
+            padding: 0;
+        }
+
+        .star-rating i {
+            font-size: 14px;
+            color: #ffc000;
+        }
+
+        .pagination {
+            display: inline-block;
+
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+
+
+        }
+
+        .pagination a.active {
+            background-color: #BA1616;
+            color: white;
+            border: 1px solid #BA1616;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        #Myimg {
+            margin: 0 auto;
+            background: #ccc;
+            border: 1px solid #000;
+
+        }
+
+
+        body {
+
+            text-align: center;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $(".wish-icon i").click(function () {
+                $(this).toggleClass("fa-heart fa-heart-o");
+            });
+        });
+
+        $(document).ready(function () {
+            $('#img-fluid').click(function () {
+                $('#Mymodal').modal('show')
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav">
+
+            <img src="C:\xampp\htdocs\public\img\header11.jpg" class="brand-logo" alt="">
+
+            <div class="nav-items">
+                <div class="search">
+                    <input type="text" class="search-box" placeholder="search Classic, Car">
+                    <button class="search-btn">search</button>
+                </div>
+                <a href="#"><img src="C:\xampp\htdocs\public\img\user.png" alt=""></a>
+                <a href="#"><img src="C:\xampp\htdocs\public\img\cart.png" alt=""></a>
+            </div>
+        </div>
+        <ul class="links-container">
+            <li><a href="#" class="link">home</a></li>
+            <li><a href="#" class="link">Planes</a></li>
+            <li><a href="#" class="link">Ships</a></li>
+            <li><a href="#" class="link">Motorcycles</a></li>
+            <li><a href="#" class="link">Trains</a></li>
+            <li><a href="#" class="link">Trucks and Buses</a></li>
+
+
+        </ul>
+    </nav>
+
+    <div class="container-xl">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Planes and Ships</h2>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+
+                    <!-- Wrapper for carousel items -->
+                    <div class="carousel-inner">
+                        <div class="item carousel-item active">
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="https://th.bing.com/th/id/OIP.lJBzsrv7gu7wOCXoYlf21AHaHa?pid=ImgDet&rs=1"
+                                                class="img-fluid" alt="Play Station">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Pont Yacht</h4>
+                                            <p class="item-price"><strike>$405.000</strike> <span>$321.000</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="https://th.bing.com/th/id/OIP.CPZis2Rjy_T9HAW3tV8_AwHaD4?pid=ImgDet&rs=1"
+                                                class="img-fluid" alt="Macbook">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Boeing X-32A JSF</h4>
+                                            <p class="item-price"><strike>$539.000</strike> <span>$379.000</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="https://i.pinimg.com/originals/19/73/a1/1973a16fa32ca7c385c43a1bce793c23.jpg"
+                                                class="img-fluid" alt="Speaker">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>The Queen Mary</h4>
+                                            <p class="item-price"><strike>$198.000</strike> <span>110.000</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="https://th.bing.com/th/id/OIP.bAUN8Kf2KC3njF4idXto_gHaG1?pid=ImgDet&rs=1"
+                                                class="img-fluid" alt="Galaxy">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>American Airlines</h4>
+                                            <p class="item-price"><strike>$219.000</strike> <span>$178.000</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="container-xl">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+
+                    <!-- Wrapper for carousel items -->
+                    <div class="carousel-inner">
+                        <div class="item carousel-item active">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="https://th.bing.com/th/id/OIP.UHe4Vawcap3-_ABW5Tmx6gHaC3?w=326&h=135&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+                                                class="img-fluid" alt="iPhone">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>The Titanic</h4>
+                                            <p class="item-price"><strike>$128.000</strike> <span>$99.000</span>
+                                            </p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="https://th.bing.com/th/id/OIP.KN5dqKwJKK7CW4lNlWHudAHaHa?w=179&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+                                                class="img-fluid" alt="Canon">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>ATA: B757-300</h4>
+                                            <p class="item-price"><strike>$90.000</strike> <span>$67.000</span>
+                                            </p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="https://th.bing.com/th/id/R.ae590195fa953e281dc0167189c8aac0?rik=7YLFwMuEb%2b8aFQ&pid=ImgRaw&r=0"
+                                                class="img-fluid" alt="Pixel">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>The Mayflower</h4>
+                                            <p class="item-price"><strike>$60.000</strike> <span>$42.000</span>
+                                            </p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="https://th.bing.com/th/id/OIP.nnpDoiqMeUAZ88vfdZwRGgHaJH?w=134&h=173&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+                                                class="img-fluid" alt="Watch">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>The USS Constitution</h4>
+                                            <p class="item-price"><strike>$55.000</strike> <span>$39.000</span>
+                                            </p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="pagination">
+        <a href="page2.html" style="color: #BA1616;">&laquo;</a>
+        <a href="index.html">1</a>
+        <a href="page2.html">2</a>
+        <a href="page3.html">3</a>
+        <a href="index.html" style="color: #BA1616;">&raquo;</a>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <img src="C:\xampp\htdocs\public\img\footerimg.jpg" class="logo" alt="">
+            <div class="footer-ul-container">
+                <ul class="category">
+                    <li class="category-title">main menu</li>
+                    <li><a href="#" class="footer-link">Mercedes</a></li>
+                    <li><a href="#" class="footer-link">Ford</a></li>
+                    <li><a href="#" class="footer-link">Nissan</a></li>
+                    <li><a href="#" class="footer-link">Tucker</a></li>
+                    <li><a href="#" class="footer-link">Shelby</a></li>
+                    <li><a href="#" class="footer-link">Porsche</a></li>
+                    <li><a href="#" class="footer-link">Toyota</a></li>
+                    <li><a href="#" class="footer-link">Mazda</a></li>
+                    <li><a href="#" class="footer-link">Chevrolet</a></li>
+                    <li><a href="#" class="footer-link">Hyundai</a></li>
+                </ul>
+                <ul class="category">
+                    <li class="category-title">Transportation</li>
+                    <li><a href="#" class="footer-link">Planes</a></li>
+                    <li><a href="#" class="footer-link">Ships</a></li>
+                    <li><a href="#" class="footer-link">Trucks</a></li>
+                    <li><a href="#" class="footer-link">Buses</a></li>
+                    <li><a href="#" class="footer-link">Motorcycles</a></li>
+                    <li><a href="#" class="footer-link">Vintage Cars</a></li>
+                    <li><a href="#" class="footer-link">Trains</a></li>
+                    <li><a href="#" class="footer-link">Bus</a></li>
+                    <li><a href="#" class="footer-link">Van</a></li>
+                    <li><a href="#" class="footer-link">Boat</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-title">about company</p>
+        <p class="info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat tempore ad
+            suscipit, eos eius
+            quisquam sed optio nisi quaerat fugiat ratione et vero maxime praesentium, architecto minima
+            reiciendis iste
+            quo deserunt assumenda alias ducimus. Ullam odit maxime id voluptates rerum tenetur corporis
+            laboriosam! Cum
+            error ipsum laborum tempore in rerum necessitatibus nostrum nobis modi! Debitis adipisci
+            illum
+            nemo aperiam
+            sed, et accusamus ut officiis. Laborum illo exercitationem quo culpa reprehenderit excepturi
+            distinctio
+            tempore cupiditate praesentium nisi ut iusto, assumenda perferendis facilis voluptas autem
+            fuga
+            sunt ab
+            debitis voluptatum harum eum. Asperiores, natus! Est deserunt incidunt quasi placeat omnis,
+            itaque harum?
+        </p>
+        <p class="info">support emails - help@classic.com, customersupport@classic.com</p>
+        <p class="info">telephone - 180 00 66 001, 180 00 66 002</p>
+
+        <p class="footer-credit">Classic Cars, Best cars online store</p>
+    </footer>
+    <script src="js/footer.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>
